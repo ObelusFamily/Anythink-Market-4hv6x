@@ -1,9 +1,9 @@
 version: "3.8"
 services:
-  anythink-backend-node:
+  anythink-backend:
     build: ./backend
-    container_name: anythink-backend-node
-    command: sh -c "cd backend && yarn install && /wait-for-it.sh mongodb-node:27017 -q -t 60 && yarn dev"
+    container_name: anythink-backend
+    command: sh -c "cd backend && yarn install && /wait-for-it.sh mongodb:27017 -q -t 60 && yarn dev"
 
     environment:
       - NODE_ENV=development
